@@ -9,7 +9,7 @@ A personal learning project built entirely from scratch to deeply understand how
 * **Dual Input:** Calculate data by either typing it manually in the terminal or importing a `.csv` file.
 * **Interactive Menu:** A crash-resistant CLI (Command Line Interface) built with `match-case`.
 
-## 💻 How to Run
+## How to Run
 Run the script in your terminal:
 ```bash
 python main.py
