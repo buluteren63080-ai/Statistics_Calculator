@@ -56,12 +56,27 @@ while True :
                 print("No data to analyze. Exiting program.")
                 break
 
-            # her bir veriye özel z score un listesini görmek istiyorsa kullanıcıdan input alınır geçersiz bir input girilince çıkılır
-            if input("Type 'z' for z score list : ") == "z":
-                print(statistic_core_functions.z_scores_list(data_list))
-                break
-            else:
-                break
+            while True:
+                choice = input("\nType 'z' for Z-Score list, or '1' to exit : ").lower()
+
+                if choice == "z":
+                    print("\n--- Z-Scores ---")
+                    print(statistic_core_functions.z_scores_list(data_list))
+
+                    while True:
+                        exit_choice = input("\nType '1' to exit : ")
+                        if exit_choice == "1":
+                            exit()
+                        else:
+                            print("Invalid input. Please type '1' to exit.")
+
+                    break
+
+                elif choice == "1":
+                    exit()
+
+                else:
+                    print("Invalid choice. Please type 'z' or '1'.")
 
         case "2":
             # kullanıcıdan okunacak csv dosyasının dosya yolunu istiyoruz
@@ -95,13 +110,25 @@ while True :
                 else:
                     print("No data to analyze. Exiting program.")
                     break
+            while True:
+                choice = input("\nType 'z' for Z-Score list, or '1' to exit : ").lower()
 
-                # her bir veriye özel z score un listesini görmek istiyorsa kullanıcıdan input alınır geçersiz bir input girilince çıkılır
-                if input("Type 'z' for z score list : ") == "z":
+                if choice == "z":
+                    print("\n--- Z-Scores ---")
                     print(statistic_core_functions.z_scores_list(data_list))
-                    break
+
+                    while True:
+                        exit_choice = input("\nType '1' to exit : ")
+                        if exit_choice == "1":
+                            exit()
+                        else:
+                            print("Invalid input. Please type '1' to exit.")
+
+                elif choice == "1":
+                    exit()
+
                 else:
-                    break
+                    print("Invalid choice. Please type 'z' or '1'.")
 
         # 3 girilirse çıkılır
         case "3":
